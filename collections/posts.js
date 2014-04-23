@@ -28,7 +28,7 @@ define([
     },
 
     url: function() {
-      return 'https://graph.facebook.com/' + this.pageId + '/statuses';
+      return 'https://graph.facebook.com/' + this.pageId + '/promotable_posts';
     },
 
     parse: function(response) {

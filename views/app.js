@@ -92,7 +92,7 @@ define([
               // Create objects for insight batch request.
               batchRequests.push({
                 method: 'GET',
-                relative_url: '/' + currentPage.get('id') + '_' + post.id + '/insights'
+                relative_url: '/' + post.id + '/insights'
               });
             }.bind(this));
 
@@ -108,7 +108,7 @@ define([
                   var insight = JSON.parse(item.body).data[0];
 
                   if (insight) {
-                    var insightId = insight.id.match(/[0-9]+_([0-9]+)\/.+/)[1];
+                    var insightId = insight.id.match(/^([0-9]+_[0-9]+)\/.+/)[1];
                     this.posts.findWhere({ id: insightId }).set({
                       post_impressions_unique: insight.values[0].value
                     });
@@ -151,11 +151,9 @@ define([
           // Clear the textarea.
           this.$el.find('.poster-text').val('');
 
-          var postId = response.id.match(/[0-9]+_([0-9]+)/)[1],
-
-              post = new Post({
-                id: postId
-              });
+          var post = new Post({
+            id: response.id
+          });
 
           post.fetch({ data: { access_token: currentPage.get('access_token') } }).done(function(response) {
             

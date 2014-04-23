@@ -19,7 +19,7 @@ define([
     className: 'post-content',
 
     render: function() {
-      if (!this.model.get('published')) {
+      if (!this.model.get('is_published')) {
         this.$el.addClass('unpublished-post');
       }
 

@@ -21,7 +21,10 @@ define([
       profile_picture: '',
       post_header: '',
       message: '',
-      published: true
+      story: '',
+      link: '',
+      picture: '',
+      is_published: true
     },
 
     toJSON: function() {

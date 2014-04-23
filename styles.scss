@@ -243,6 +243,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: #ddd 1px solid;
+  overflow: hidden;
 
   padding-left: 70px;
 
@@ -267,18 +268,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 3px;
   }
 
-  img {
+  .profile-picture {
     width: 50px;
     height: 50px;
     margin-left: -70px;
     position: absolute;
   }
 
-  small {
-    color: #aaa;
+  p {
+    margin: 4px 0;
   }
 
-  p {
-    margin: 0;
+  small {
+    color: #aaa;
   }
 }
